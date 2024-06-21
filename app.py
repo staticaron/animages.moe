@@ -1,5 +1,4 @@
-import pdb
-from flask import Flask, send_file
+from flask import Flask, send_file, render_template
 import os
 import random
 
@@ -7,12 +6,12 @@ app = Flask("animages.moe")
 
 @app.route("/")
 def home():
-    return "<h1>animages.moe</h1>"
+    return render_template("index.html")
 
 @app.route("/<username>/<collection>.png", methods=['GET'])
 def send_main(username, collection):
     
-    path = f"images/{username}/{collection}/"
+    path = f"static/images/{username}/{collection}/"
     
     files = os.listdir(path)
     
