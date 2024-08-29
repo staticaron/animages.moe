@@ -20,6 +20,3 @@ def send_main(username, collection):
     selected_file_path = path + files[r_value]
     
     return send_file(selected_file_path, mimetype="image/png")
-
-if __name__ == "__main__":
-    app.run(debug=True)
